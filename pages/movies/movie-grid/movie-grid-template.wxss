@@ -1,0 +1,23 @@
+@import "../movie/movie-template.wxss";
+/* 
+   scroll-view专题
+   1. scroll-view是滚动视图，该元素的height指的是滚动窗口的高度，因为内容可能过长，当前手机窗口的高度无法将内容全部显示，就使用滚动窗口在内容上进行滚动以显示内容的不同部分，但是在手机窗口上所占据的高度一直只是滚动窗口的高度height。一般滚动窗口的height小于等于手机窗口的height才合理有意义。
+scroll-view组件的height样式一定要设置bindscrolltolower才有效。
+   2. 对内容使用scroll-view后显示的默认滚动条是粗的，不同于没有使用scroll-view时，手机窗口上的默认细滚动条。而使用scroll-view后scroll-view内容上的滚动条和手机窗口上的滚动条同时存在。
+   3. 手机窗口其实本身也可以理解为是一个滚动窗口，而scroll-view则可以理解为是手机的滚动窗口中的一个元素又是一个滚动窗口，即嵌套的滚动窗口。
+   4. 当然不管是手机窗口还是滚动窗口，只要内容没有超过窗口的height就不会显示滚动条。
+   5. 要使用scroll-view元素的触底回调函数必须要设置滚动窗口的高度，所谓触底即滚动窗口滚动到了内容的底部
+   6. 真机上scroll-view的滚动条的没有显示？？？
+*/
+
+/* 这里不用flex弹性盒子模型是因为之后会对scroll-view组件无效，其次直接使用float:left布局多个电影最简单，使得多部电影一行依次排列下去（虽然之前讲尽量使用小程序提倡的flex，不使用float浮动） */
+.single-view-container{
+  float: left;
+  margin-bottom: 40rpx;
+}
+
+/* 调整使得整个布局居中 */
+.grid-container{
+  height: 1300rpx;
+  margin: 40rpx 0 40rpx 6rpx;
+}

@@ -1,0 +1,18 @@
+<!-- wxml是编写小程序的骨架文件 -->
+<!-- <view>相当于<div> -->
+<!-- 真正的button组件一般都用在Form表单组件中用于提交和重置表单内所有组件的值，而平时实现点击跳转功能使用普通组件+捕获事件的函数即可实现 -->
+<!-- Form表单组件指的是一类组件包括switch，slider，radio，checkbox，input等等，而要获取表单组件的值有两种方法，一个是单个表单组件值的获取（bindchange）还有就是整个表单中所有组件的值的获取（submit） -->
+<!-- 有两种显示地图的方法，一种是使用小程序自带的map组件，还有一种是用wx调用微信内置的地图 -->
+<!-- map组件很多功能要在真机上才能体现，如果要开发研究可以到真机上进行。 -->
+<!-- OpenLayers框架实现地图特别精妙，现在出到2了，但是1没有引用任何框架要学习源码可以使用1；将js面向对象的思想发挥到了极致，但现在ES6中的class关键字已实现了这一点 -->
+<!-- template不是一个组件，而是一个模板化的技术。如果在同一个页面内复用代码可以使用wx:for,但是想要跨页面进行复用就需要template了 -->
+<!-- template进行模板化编程可以复用wxml和wxss但不能复用js，使用简单；自定义组件模块化编程都可以复用，使用较难 -->
+<!-- ES6:module，class，promise，=> -->
+<view class='container'>
+  <image class='user-avatar' src='/images/avatar/1.png'>
+  </image>
+  <text class='user-name'>你好，夏天</text>
+  <view class='moto-container' bind:tap='onTap'>
+    <text class='moto'>昨夜雨疏风骤</text>
+  </view>
+</view>

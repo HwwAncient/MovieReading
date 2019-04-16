@@ -1,0 +1,31 @@
+<!-- 元素的属性data-xxx用于自定义属性
+js用xxx获取到属性（data是固定的，但是js中不需要）
+xxx中不管有没有大写，js中使用的xxx一律转为小写
+如果要用大写需要用-分割
+eg：1. postId，js中用postid获取
+    2. postId-ab，js中用postidAb获取 -->
+<!-- 要往template中传数据用data属性，值也要用""和{{}}括起来，此处还加了...是将item对象的属性依次铺展开来，这样在template中就可以直接用item对象的属性了，而不必用item.属性 -->
+<!-- 用wx:for渲染列表的时候需要外加一层block标签，block标签本身没有什么意义只起修饰作用，可见文档说明 -->
+
+<import src='post-item/post-item-template.wxml' />
+<view>
+
+  <swiper catchtap='onSwiperTap' vertical='{{false}}' indicator-dots='true' autoplay='true' interval='5000'>
+    <swiper-item>
+      <image src='/images/wx.png' data-postId='3'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/vr.png' data-postId='4'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/iqiyi.png' data-postId='5'></image>
+    </swiper-item>
+  </swiper>
+
+  <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx">
+    <view bindtap='onPostTap' data-postId="{{item.postId}}">
+      <template is='postItem' data="{{...item}}" />
+    </view>
+  </block>
+
+</view>

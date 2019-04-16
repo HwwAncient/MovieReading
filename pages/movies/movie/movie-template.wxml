@@ -1,0 +1,9 @@
+<!-- 因为template元素只有一个data属性可以传数据（不像其他元素可以有多个自定义属性data-xxx来绑定数据），所以要想往template元素中绑定多个数据，可以将多个数据再包装成一个对象进行传递。如下所示：{{stars:stars, score:average}} -->
+<import src='../stars/stars-template.wxml' />
+<template name='movieTemplate'>
+  <view class='movie-container' catchtap='onMovieTap' data-movieId='{{movieId}}'>
+    <image class='movie-img' src='{{coverageUrl}}'></image>
+    <text class='movie-title'>{{title}}</text>
+    <template is='starsTemplate' data='{{stars:stars, score:average}}' />
+  </view>
+</template>

@@ -1,0 +1,26 @@
+<import src='movie-list/movie-list-template.wxml' />
+<import src='movie-grid/movie-grid-template.wxml' />
+<!-- wxss样式不能直接加在template标签上，template只是一个占位符，加上无效 -->
+<!-- 使用template时，如果是编写wxml则自下而上依次编写，如果是传递绑定数据则自上而下依次传递 -->
+<view class='search'>
+  <icon type='search' class='search-img' size='13' color='#405f80'></icon>
+  <input type='text' placeholder='血战钢锯岭、你的名字' placeholder-class='placeholder' bindfocus='onBindFocus' bindconfirm='onBindConfirm' value='{{inputValue}}' />
+  <image src='/images/icon/xx.png' bindtap='onCancelImgTap' wx:if='{{searchPanelShow}}' class='xx-img'></image>
+</view>
+
+<view class='container' wx:if="{{containerShow}}">
+  <view class='movies-template'>
+    <template is="movieListTemplate" data="{{...inTheaters}}" />
+  </view>
+  <view class='movies-template'>
+    <template is="movieListTemplate" data="{{...comingSoon}}" />
+  </view>
+  <view class='movies-template'>
+    <template is="movieListTemplate" data="{{...top250}}" />
+  </view>
+</view>
+
+<view class='search-panel' wx:if="{{searchPanelShow}}">
+  <template is='movieGridTemplate' data='{{...searchResult}}'/>
+</view>
+

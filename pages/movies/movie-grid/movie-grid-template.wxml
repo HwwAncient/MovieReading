@@ -1,0 +1,20 @@
+<!-- '{{false}}'并不代表字符串，而是布尔类型，只不过属性绑定值都得写在一对单引号内；但是在js代码中就不用写在单引号和{{}}内，可以直接使用布尔类型。而'false'则代表字符串，换做布尔类型即为true而非false -->
+<import src='../movie/movie-template.wxml' />
+<!-- <template name='movieGridTemplate'>
+  <scroll-view class='grid-container' scroll-y='{{true}}' scroll-x='{{false}}' bindscrolltolower='onScrollLower'>
+    <block wx:for="{{movies}}" wx:for-item="movie">
+      <view class='single-view-container'>
+        <template is="movieTemplate" data="{{...movie}}" />
+      </view>
+    </block>
+  </scroll-view>
+</template> -->
+<template name='movieGridTemplate'>
+  <view class='grid-container'>
+    <block wx:for="{{movies}}" wx:for-item="movie">
+      <view class='single-view-container'>
+        <template is="movieTemplate" data="{{...movie}}" />
+      </view>
+    </block>
+  </view>
+</template>

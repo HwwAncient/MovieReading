@@ -1,0 +1,47 @@
+@import "../movie/movie-template.wxss";
+/* vertical-align在弹性盒子内部无效 */
+/* 真机上此处图片的排版对齐有些不同，需要注意？？？ */
+.movie-list-container{
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* 为了使得"更多"图标右侧和图片右侧对齐 */
+.inner-container{
+  margin: 0 auto 20rpx;
+}
+
+.movie-head{
+  padding: 30rpx 20rpx 22rpx;
+  /* 弹性盒子模型取代float浮动，但会导致vertical-align无效 */
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between */
+}
+
+.slogan{
+  font-size: 24rpx;
+}
+
+.more{
+  float: right;
+}
+
+.more-text{
+  vertical-align: middle;
+  margin-right: 10rpx;
+  color: #1f4ba5;
+}
+
+.more-img{
+  width: 9rpx;
+  height: 16rpx;
+  vertical-align: middle;
+}
+
+.movies-container{
+  display: flex;
+  flex-direction: row;
+}
